@@ -15,18 +15,19 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: `${profile.name} — ${profile.role}`,
-  description: profile.summary,
+  description: profile.summaryShort,
   keywords: [
-    "Frontend Developer",
+    "Full Stack Developer",
     "React",
     "Next.js",
     "TypeScript",
-    "Banca Digital",
+    ".NET",
+    "Oracle",
     "Paraguay",
   ],
   openGraph: {
     title: `${profile.name} — ${profile.role}`,
-    description: profile.summary,
+    description: profile.summaryShort,
     type: "website",
   },
 };
