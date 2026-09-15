@@ -5,7 +5,7 @@ export const profile = {
   location: "Asunción, Paraguay",
   email: "om1779468@gmail.com",
   phone: "+595 984 141644",
-  linkedin: "https://linkedin.com/in/adrian-martinez",
+  linkedin: "https://www.linkedin.com/in/adri%C3%A1n-martinez-7b5472212/",
   github: "https://github.com/adrianmartinez",
   website: "https://adrianmartinez.evowarex.com",
   summary:
