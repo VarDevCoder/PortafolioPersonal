@@ -1,7 +1,7 @@
 export const profile = {
   name: "Adrián Martínez",
   role: "Desarrollador Full Stack",
-  roleDetail: "React / Next.js — .NET · Sistemas Financieros",
+  roleDetail: "React / Next.js — .NET",
   location: "Asunción, Paraguay",
   email: "om1779468@gmail.com",
   phone: "+595 984 141644",
