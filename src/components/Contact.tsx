@@ -22,12 +22,6 @@ export default function Contact() {
             {profile.email}
           </a>
           <a
-            href={`tel:${profile.phone.replace(/\s/g, "")}`}
-            className="rounded-full border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
-          >
-            {profile.phone}
-          </a>
-          <a
             href={`https://wa.me/${profile.phone.replace(/[^\d]/g, "")}`}
             target="_blank"
             rel="noopener noreferrer"
