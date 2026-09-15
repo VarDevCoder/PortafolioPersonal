@@ -8,9 +8,10 @@ export default function Contact() {
           ¿Hablamos?
         </h2>
         <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-muted md:text-base">
-          Estoy abierto a nuevas oportunidades como Frontend Developer. Si tu
-          equipo busca a alguien con experiencia en React/Next.js aplicado a
-          entornos productivos y regulados, escribime.
+          Estoy abierto a nuevas oportunidades como Desarrollador Full Stack.
+          Si tu equipo busca a alguien con experiencia end-to-end en
+          React/Next.js y .NET aplicada a entornos productivos y regulados,
+          escribime.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
