@@ -14,10 +14,11 @@ export default function Hero() {
 
       gsap.from(".hero-anim", {
         opacity: 0,
-        y: 24,
-        duration: 0.7,
-        ease: "power2.out",
-        stagger: 0.12,
+        y: 40,
+        scale: 0.97,
+        duration: 0.8,
+        ease: "power3.out",
+        stagger: 0.1,
       });
     },
     { scope: ref }

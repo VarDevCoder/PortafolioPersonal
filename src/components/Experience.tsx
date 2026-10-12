@@ -1,14 +1,54 @@
+"use client";
+
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import Section from "./Section";
 import { experience } from "@/lib/data";
 
+gsap.registerPlugin(ScrollTrigger, useGSAP);
+
 export default function Experience() {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useGSAP(
+    () => {
+      if (!ref.current || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        return;
+      }
+
+      const tl = gsap.timeline({
+        scrollTrigger: { trigger: ref.current, start: "top 85%", once: true },
+      });
+
+      tl.from(".job-entry", {
+        opacity: 0,
+        x: -32,
+        duration: 0.6,
+        ease: "power2.out",
+        stagger: 0.18,
+      }).from(
+        ".job-dot",
+        {
+          scale: 0,
+          duration: 0.4,
+          ease: "back.out(3)",
+          stagger: 0.18,
+        },
+        "<"
+      );
+    },
+    { scope: ref }
+  );
+
   return (
     <Section id="experiencia" eyebrow="Trayectoria" title="Experiencia profesional">
-      <div className="relative space-y-10 border-l border-border pl-8">
+      <div ref={ref} className="relative space-y-10 border-l border-border pl-8">
         {experience.map((job) => (
-          <div key={`${job.company}-${job.period}`} className="relative">
+          <div key={`${job.company}-${job.period}`} className="job-entry relative">
             <span
-              className={`absolute -left-[2.28rem] top-1.5 h-3 w-3 rounded-full border-2 border-background ${
+              className={`job-dot absolute -left-[2.28rem] top-1.5 h-3 w-3 rounded-full border-2 border-background ${
                 job.current ? "bg-accent" : "bg-muted"
               }`}
             />
