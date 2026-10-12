@@ -1,12 +1,12 @@
 export const profile = {
   name: "Adrián Martínez",
   role: "Desarrollador Full Stack",
-  roleDetail: "React / Next.js — .NET · Sistemas Financieros",
+  roleDetail: "React / Next.js — .NET",
   location: "Asunción, Paraguay",
   email: "om1779468@gmail.com",
   phone: "+595 984 141644",
-  linkedin: "https://linkedin.com/in/adrian-martinez",
-  github: "https://github.com/adrianmartinez",
+  linkedin: "https://www.linkedin.com/in/adri%C3%A1n-martinez-7b5472212/",
+  github: "https://github.com/VarDevCoder",
   website: "https://adrianmartinez.evowarex.com",
   summary:
     "Desarrollador full stack con cinco años de experiencia construyendo soluciones de punta a punta, desde la interfaz hasta la base de datos y el despliegue. Actualmente desarrollo el módulo de tarjetas de Finansys Web en Banco Continental (Next.js + TypeScript sobre backend .NET y Oracle), integrando APIs REST, SSO corporativo y flujos 3D Secure bajo requisitos PCI DSS. Experiencia previa en desarrollo backend (PHP, .NET, NestJS) y en administración de infraestructura.",

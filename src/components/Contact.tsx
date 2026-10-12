@@ -22,10 +22,12 @@ export default function Contact() {
             {profile.email}
           </a>
           <a
-            href={`tel:${profile.phone.replace(/\s/g, "")}`}
+            href={`https://wa.me/${profile.phone.replace(/[^\d]/g, "")}`}
+            target="_blank"
+            rel="noopener noreferrer"
             className="rounded-full border border-border px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:border-accent/50 hover:text-accent"
           >
-            {profile.phone}
+            WhatsApp
           </a>
         </div>
 
@@ -40,6 +42,9 @@ export default function Contact() {
             {profile.website.replace("https://", "")}
           </a>
         </div>
+        <p className="mt-2 text-xs text-muted">
+          Consultoría de informática en gestación junto a 5 conocidos de la facultad y colegas laborales.
+        </p>
       </div>
 
       <footer className="mt-10 flex flex-col items-center gap-2 text-center text-xs text-muted">
