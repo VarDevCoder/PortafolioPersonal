@@ -1,8 +1,17 @@
+"use client";
+
 import { profile } from "@/lib/data";
+import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 export default function Contact() {
+  const ref = useScrollReveal<HTMLElement>();
+
   return (
-    <section id="contacto" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16 md:py-20">
+    <section
+      ref={ref}
+      id="contacto"
+      className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16 md:py-20"
+    >
       <div className="rounded-3xl border border-accent/30 bg-accent-soft px-6 py-12 text-center md:px-16">
         <h2 className="text-2xl font-semibold tracking-tight text-foreground md:text-3xl">
           ¿Hablamos?
