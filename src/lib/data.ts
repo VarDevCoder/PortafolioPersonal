@@ -127,24 +127,70 @@ export const experience: Experience[] = [
   },
 ];
 
-export type Project = {
+export type System = {
   name: string;
+  subtitle: string;
+  url: string;
   description: string;
-  stack: string[];
+  stack?: string[];
+  credentials?: { user: string; password: string };
 };
 
-export const projects: Project[] = [
+export type SystemCategory = {
+  title: string;
+  note?: string;
+  systems: System[];
+};
+
+export const systemsCatalog: SystemCategory[] = [
   {
-    name: "ERP fullstack",
-    description:
-      "API RESTful con autenticación JWT, gestión de roles y permisos y sistema de auditoría. SPA en React con Redux Toolkit y lazy loading. Containerizado con Docker y CI/CD con GitHub Actions.",
-    stack: ["Laravel", "React", "PostgreSQL", "Docker", "GitHub Actions"],
+    title: "Sistemas Fullstack",
+    systems: [
+      {
+        name: "SAIL",
+        subtitle: "Sistema de Gestión Empresarial para Ferreterías",
+        url: "https://dynamic-sherbet-5e7a15.netlify.app/login.html",
+        description:
+          "SPA con autenticación y roles (perfil \"Encargado\") sobre un dominio de negocio real: ventas, caja con turnos y arqueo, inventario con trazabilidad (kardex), cuentas por cobrar, compras/proveedores y reportes. El punto de venta incluye atajos de teclado (F2/F9/Esc), cálculo de vuelto y exportación a Excel. Maneja estados complejos — turno de caja abierto/cerrado, stock vendible vs. no vendible, pedidos en distintos estados — no es un CRUD simple. Backend en Python (FastAPI) sobre PostgreSQL, cubierto por 75 tests de integración contra una base real, con bloqueo de login por email e IP.",
+        stack: [
+          "Python",
+          "FastAPI",
+          "PostgreSQL",
+          "SQLAlchemy 2",
+          "Alembic",
+          "JWT",
+          "pytest",
+        ],
+        credentials: { user: "encargado@sail.local", password: "demo12345" },
+      },
+      {
+        name: "E-commerce",
+        subtitle: "Tienda online con productos configurables",
+        url: "https://rococo-pothos-664cc8.netlify.app/",
+        description:
+          "Enrutamiento dinámico por producto (rutas con UUID) y sistema de variantes con delta de precio. Para la línea de personalizados, un motor de formularios configurables por producto: cada producto define sus propios campos en vez de tener un formulario hardcodeado. Carga asíncrona con estados de loading manejados en toda la navegación.",
+      },
+    ],
   },
   {
-    name: "Plataforma e-commerce con microservicios",
-    description:
-      "Arquitectura con API Gateway y patrones event-driven sobre colas de mensajes para procesamiento asíncrono. Cache distribuido con Redis, testing con Jest y documentación con Swagger / OpenAPI.",
-    stack: ["NestJS", "PostgreSQL", "Redis", "Jest", "Swagger / OpenAPI"],
+    title: "Prototipos de UI/UX",
+    note: "Maquetas de producto con datos locales o ficticios, sin backend productivo conectado — pensadas para mostrar criterio de diseño de interacción, no como sistemas en producción.",
+    systems: [
+      {
+        name: "CEO",
+        subtitle: "Gestor de Plataformas",
+        url: "https://codice-demo.netlify.app/",
+        description:
+          "Maqueta de producto (datos locales, sin backend conectado — la propia interfaz lo indica) con tabla expandible por empresa, grid de credenciales por plataforma, acciones de copiar/abrir, buscador y contadores agregados (activas/pendientes).",
+      },
+      {
+        name: "ERP-FRONTEND",
+        subtitle: "Gestor de Ventas",
+        url: "https://eloquent-cassata-b28073.netlify.app/archive/suppliers",
+        description:
+          "Maqueta de producto — el propio módulo de \"Datos\" aclara que son gráficos de ejemplo (datos ficticios). El punto de venta calcula IVA 10% correctamente y tiene una estructura de navegación clara, con submenús por módulo.",
+      },
+    ],
   },
 ];
 
